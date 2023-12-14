@@ -20,9 +20,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment.Companion.Center
 import androidx.compose.ui.Alignment.Companion.TopEnd
 import androidx.compose.ui.Modifier
@@ -59,7 +56,7 @@ fun ScreenMovies(repository: MoviesRepository) {
                         items(state.movies) { movie ->
                             CardItem(
                                 movie = movie,
-                                onClick = { viewModel.onClickFavorite(movie = movie) }
+                                onClick = { viewModel.onClickFavorite(movie) }
                             )
                         }
                     }
